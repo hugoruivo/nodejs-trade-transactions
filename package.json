@@ -1,0 +1,13 @@
+{
+  "name": "MyApp",
+  "main": "server.js",
+  "version": "0.0.1",
+  "description": "My App",
+  "dependencies": {
+    "body-parser": "^1.13.1",
+    "ejs": "^2.3.1",
+    "express": "^4.12.4",
+    "mongoose": "^4.0.5",
+    "socket.io": "^1.3.5"
+  }
+}

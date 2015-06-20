@@ -1,0 +1,33 @@
+<div id="trades">
+	<% trades.forEach(function(trade) { %>
+		<h3>Trade id: <%= trade._id %></h3>
+		<div class="trade-item-wrapper">
+			<ul>
+				<li>
+					User Id: <%= trade.userId %>
+				</li>
+				<li>
+					Currency From: <%= trade.currencyFrom %>
+				</li>
+				<li>
+					Currency To: <%= trade.currencyTo %>
+				</li>
+				<li>
+					Amount Sell: <%= trade.amountSell %>
+				</li>
+				<li>
+					Amount Buy: <%= trade.amountBuy %>
+				</li>
+				<li>
+					Rate: <%= trade.rate %>
+				</li>
+				<li>
+					Date: <%= trade.timePlaced %>
+				</li>
+				<li>
+					Originating Country: <%= trade.originatingCountry %>
+				</li>
+			</ul>
+		</div>
+	<% }); %>
+</div>

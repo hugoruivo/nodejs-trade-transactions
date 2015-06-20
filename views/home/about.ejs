@@ -1,0 +1,26 @@
+<div id="about">
+	<p>
+		In the Transactions tab when the page is loaded it loads a list with the last 15 transactions.
+	</p>
+	<p>
+		Then each time a new transaction is inserted the list is automatically updated via socket io ( you can try inserting a new transaction in a different or incognito browser window or in a different computer to see the list updating by itself. ).
+	</p>
+	<p>
+		In the Stats tab you can find a basic statistic page where you can filter the stats for a given currency. For example you can list the stats for currency "from" or "to" of a given currency. We can improve / extend the functionalities in the backend to give stats about rates, most traded "from" or "to" currency, etc... The sky is the limit.
+	</p>
+	<p>
+		Then we have a final Helper Insert Transaction tab, which is basically a tab where you can insert transactions to test ut things.
+	</p>
+	<p>
+		Note: have in mind that transactions can be inserted via a POST call to a public API implemented at <SITE_ROOT>/api/trades, where <SITE_ROOT> is replaced by the url of the site. A GET call to this public API url will list all of the transactions inserted ( be carefull as if they are a lot, let's say millions ) of transactions, the browser may not be able to handle the returned data.
+	</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+	
+</div>

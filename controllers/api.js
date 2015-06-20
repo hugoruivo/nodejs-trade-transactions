@@ -49,11 +49,17 @@ exports.postTrades = function(req, res, io) {
 	// Save the trade and check for errors
 	trade.save(function(err) {
 		if (err)
-			res.send(err);
+		{
+			res.json({ success: false, message: 'Error inserting trade!', data: err });
+			return;
+		}
 
 		Trade.count({}, function(err, count){
 			if (err)
-				res.send(err);
+			{
+				res.json({ success: false, message: 'Error inserting trade!', data: err });
+				return;
+			}
 
 			if (typeof io !== 'undefined') {
 				var passData = {
@@ -73,7 +79,10 @@ exports.getTrades = function(req, res) {
 	// Use the Trade model to find all trades
 	Trade.find(function(err, trade) {
 		if (err)
+		{
 			res.send(err);
+			return;
+		}
 
 		res.json(trade);
 	});
@@ -87,8 +96,10 @@ exports.postGetCurrencies = function(req, res) {
 	if (currencyType && currencyType !== "undefined") {
 		//Queries from unique values of that currency
 		Trade.distinct(currencyType, { }, function (err, currencyType) {
-			if (err)
-				res.send(err);
+			if (err){
+				res.json({ success: false, error: err });
+				return;
+			}
 
 			var retVal = {
 				success: true,

@@ -15,12 +15,16 @@ exports.getHome = function(req, res) {
 			timePlacedDate: -1 //Sort by Date DESC
 		}
 	}, function(err, trade) {
-		if (err)
+		if (err) {
 			res.send(err);
+			return;
+		}
 
 		Trade.count({}, function(err, count){
-			if (err)
+			if (err){
 				res.send(err);
+				return;
+			}
 
 			res.render('home/index', {
 				trades: trade,
